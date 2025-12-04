@@ -105,7 +105,6 @@
             border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
         }
         .skill-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
-        .skill-icon i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
         .education-item {
             padding: 1.5rem; border-left: 3px solid var(--primary-color); margin-bottom: 1.5rem;
             position: relative; background: rgba(30, 41, 59, 0.5);
@@ -118,8 +117,19 @@
         .education-item .institution { font-weight: 500; opacity: 0.9; }
 
         /* --- Projects Section --- */
-        .project-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; }
-        .project-card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
+        /* UPDATED CSS for Project Tiles */
+        .project-card { 
+            background-color: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+            height: 100%; 
+        }
+        .project-card:hover { 
+            transform: translateY(-8px); /* Lift the card slightly more for emphasis */
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4); /* Stronger blue shadow */
+            border-color: var(--primary-color); /* Highlight border */
+        }
         .card-title { color: var(--primary-color); }
         .tech-stack .badge { background-color: var(--primary-color); margin-right: 5px; font-weight: 500; }
         .project-links { margin-top: 1rem; }
@@ -245,146 +255,179 @@
             </div>
         </section>
 
-        <section id="projects" class="py-5">
-            <div class="container fade-in">
-                <h2 class="section-title text-center">Projects (9 Total)</h2>
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Operating Systems Project</h5>
-                                <p class="card-text">A Process Scheduler Simulator implementing FCFS, SJF, Round Robin, and Priority Scheduling algorithms.</p>
-                                <div class="tech-stack">
-                                    <span class="badge">C</span>
-                                    <span class="badge">OS Algorithms</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/mehedi-dev-bd/OS-Project" target="_blank" class="card-link">
-                                        <i class="fab fa-github"></i> GitHub
-                                    </a>
-                                    <a href="OS Project.exe" class="card-link" download>
-                                        <i class="fas fa-download"></i> Live Demo (EXE)
-                                    </a>
-                                    <a href="OS Project.c" target="_blank" class="card-link">
-                                        <i class="fas fa-file-code"></i> See Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-4"><div class="project-card"><div class="card-body"><h5 class="card-title">University Assignment Web App</h5><p class="card-text">A responsive web application built for a university assignment focusing on database integration.</p><div class="tech-stack"><span class="badge">Laravel</span><span class="badge">PHP</span><span class="badge">Bootstrap</span></div><div class="project-links"><a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a><a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a></div></div></div></div>
-                    <div class="col-md-6 col-lg-4 mb-4"><div class="project-card"><div class="card-body"><h5 class="card-title">Data Structures Project</h5><p class="card-text">An efficient algorithm implementation in C++ for academic evaluation of core data structures.</p><div class="tech-stack"><span class="badge">C++</span><span class="badge">Algorithms</span></div><div class="project-links"><a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+         <!-- =================== PROJECT SECTION (UPDATED) =================== -->
 
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Computer Network Project</h5>
-                                <p class="card-text">Implementation of network protocols and client-server communication models using sockets.</p>
-                                <div class="tech-stack">
-                                    <span class="badge">Python</span>
-                                    <span class="badge">Socket Programming</span>
-                                    <span class="badge">Networking</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
+    <section id="projects" class="py-5">
+        <div class="container fade-in">
+            <h2 class="section-title text-center w-100">Projects</h2>
+            <div class="row">
+
+               <!-- 1. Operating Systems Project (Retained) -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Operating Systems Project</h5>
+                            <p class="card-text">A Process Scheduler Simulator implementing FCFS, SJF, Round Robin, and Priority Scheduling algorithms.</p>
+                            <div class="tech-stack">
+                                <span class="badge">C</span>
+                                <span class="badge">OS Algorithms</span>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Compiler Design Project</h5>
-                                <p class="card-text">A simple Lexical Analyzer and Parser built to understand language translation principles.</p>
-                                <div class="tech-stack">
-                                    <span class="badge">C++</span>
-                                    <span class="badge">Lex/Yacc</span>
-                                    <span class="badge">Grammar</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="card-body">
-                                <h5 class="card-title">School Management System (Web)</h5>
-                                <p class="card-text">A full-featured web application for managing student records, faculty, and academic information.</p>
-                                <div class="tech-stack">
-                                    <span class="badge">Laravel</span>
-                                    <span class="badge">PHP</span>
-                                    <span class="badge">MySQL</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="card-body">
-                                <h5 class="card-title">E-Commerce Platform (Web)</h5>
-                                <p class="card-text">A robust online store with user authentication, product catalog, cart, and checkout functionality.</p>
-                                <div class="tech-stack">
-                                    <span class="badge">React/Next.js</span>
-                                    <span class="badge">Node.js</span>
-                                    <span class="badge">MongoDB</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Modern Developer Portfolio (Web)</h5>
-                                <p class="card-text">A sleek, responsive portfolio template built from scratch to showcase skills and projects.</p>
-                                <div class="tech-stack">
-                                    <span class="badge">HTML5</span>
-                                    <span class="badge">CSS3</span>
-                                    <span class="badge">JavaScript</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="project-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Machine Learning Model</h5>
-                                <p class="card-text">Developed a classification or regression model using popular Python machine learning libraries.</p>
-                                <div class="tech-stack">
-                                    <span class="badge">Python</span>
-                                    <span class="badge">Scikit-learn</span>
-                                    <span class="badge">Pandas</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
-                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                                </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mehedi-dev-bd/OS-Project" target="_blank" class="card-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="OS Project.exe" download class="card-link">
+                                    <i class="fas fa-download"></i> Live Demo (EXE)
+                                </a>
+                                <a href="OS Project.c" target="_blank" class="card-link">
+                                    <i class="fas fa-file-code"></i> See Code
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+               
+                <!-- 2. School Website (Updated) -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">School Website</h5>
+                            <p class="card-text">A fully responsive School Website built for a university assignment.</p>
+                            <div class="tech-stack">
+                                <span class="badge">Laravel</span>
+                                <span class="badge">PHP</span>
+                                <span class="badge">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mehedi-dev-bd/School" target="_blank" class="card-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://mehedi-dev-bd.github.io/School/" target="_blank" class="card-link">
+                                    <i class="fas fa-external-link-alt"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Computer Network Project -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer Network Project</h5>
+                            <p class="card-text">Network architecture and protocol simulation using Cisco Packet Tracer.</p>
+                            <div class="tech-stack">
+                                <span class="badge">Packet Tracer</span>
+                                <span class="badge">Networking</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mehedi-dev-bd/Computer-Network-Projects" target="_blank" class="card-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="NetflowArchitects Project.pkt" download class="card-link">
+                                    <i class="fas fa-download"></i> Demo (.pkt)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Compiler Design Project -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Compiler Design Project</h5>
+                            <p class="card-text">Implementation of lexical analysis and parsing for a custom language.</p>
+                            <div class="tech-stack">
+                                <span class="badge">C++</span>
+                                <span class="badge">Compiler Theory</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mehedi-dev-bd/Compiler-Design-Projects" target="_blank" class="card-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="ToyLang-A-Glimpse-into-Language-Design" download class="card-link">
+                                    <i class="fas fa-file-powerpoint"></i> Slides
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. IT Firm (Updated) -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">IT Firm</h5>
+                            <p class="card-text">A professional website developed for ARMS InfoTech BD.</p>
+                            <div class="tech-stack">
+                                <span class="badge">Laravel</span>
+                                <span class="badge">PHP</span>
+                                <span class="badge">MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mehedi-dev-bd/ARMS-InfoTech-BD" target="_blank" class="card-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://mehedi-dev-bd.github.io/ARMS-InfoTech-BD/" target="_blank" class="card-link">
+                                    <i class="fas fa-external-link-alt"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. DIU Meal Service (NEW) -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">DIU Meal Service</h5>
+                            <p class="card-text">A web application for managing and ordering meals for university students, ensuring efficient service.</p>
+                            <div class="tech-stack">
+                                <span class="badge">HTML</span>
+                                <span class="badge">CSS</span>
+                                <span class="badge">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mehedi-dev-bd/DIU-Meal-Service" target="_blank" class="card-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://mehedi-dev-bd.github.io/DIU-Meal-Service/" target="_blank" class="card-link">
+                                    <i class="fas fa-external-link-alt"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Digital Service (NEW) -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Service</h5>
+                            <p class="card-text">A platform providing various digital services and information (e.g., student services, forms, news).</p>
+                            <div class="tech-stack">
+                                <span class="badge">Laravel</span>
+                                <span class="badge">PHP</span>
+                                <span class="badge">Bootstrap</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mehedi-dev-bd/Digital-Service" target="_blank" class="card-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://mehedi-dev-bd.github.io/Digital-Service/" target="_blank" class="card-link">
+                                    <i class="fas fa-external-link-alt"></i> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
             </div>
-        </section>
+        </div>
+    </section>
 
         <section id="resume" class="py-5">
             <div class="container text-center fade-in">
