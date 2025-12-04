@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD MEHEDI HASAN | Computer Science & Engineering Student</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* --- Global & Typography --- */
+        :root {
+            --primary-color: #2563EB; /* Electric Blue */
+            --background-color: #0F172A; /* Deep Slate */
+            --text-color: #F8FAFC; /* Neutral Gray */
+            --card-bg: #1E293B; /* Slightly lighter slate */
+            --border-color: #334155;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand, .modal-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary-color);
+            position: relative; display: inline-block;
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%;
+            transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--primary-color);
+        }
+
+        /* --- Animated Background --- */
+        .background-icons { position: fixed; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
+        .background-icons i {
+            position: absolute; color: rgba(37, 99, 235, 0.1); font-size: 4rem;
+            bottom: -150px; animation: moveIcons 20s linear infinite;
+            text-shadow: 0 0 5px rgba(37, 99, 235, 0.5), 0 0 10px rgba(37, 99, 235, 0.3);
+        }
+        .background-icons i:nth-child(1) { left: 10%; animation-duration: 22s; font-size: 3rem; }
+        .background-icons i:nth-child(2) { left: 20%; animation-duration: 18s; animation-delay: 2s; font-size: 5rem; }
+        .background-icons i:nth-child(3) { left: 30%; animation-duration: 25s; }
+        .background-icons i:nth-child(4) { left: 40%; animation-duration: 15s; animation-delay: 5s; font-size: 3.5rem; }
+        .background-icons i:nth-child(5) { left: 50%; animation-duration: 28s; }
+        .background-icons i:nth-child(6) { left: 60%; animation-duration: 16s; animation-delay: 1s; font-size: 4.5rem; }
+        .background-icons i:nth-child(7) { left: 70%; animation-duration: 21s; animation-delay: 3s; }
+        .background-icons i:nth-child(8) { left: 80%; animation-duration: 19s; font-size: 3rem; }
+        .background-icons i:nth-child(9) { left: 90%; animation-duration: 23s; animation-delay: 4s; }
+        .background-icons i:nth-child(10) { left: 5%; animation-duration: 17s; }
+        @keyframes moveIcons { 0% { transform: translateY(0); } 100% { transform: translateY(-120vh); } }
+        .main-content { position: relative; z-index: 1; }
+
+        /* --- Navbar --- */
+        .navbar { background-color: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
+        .nav-link { color: var(--text-color); transition: color 0.3s ease; }
+        .nav-link:hover, .navbar-brand:hover { color: var(--primary-color); }
+        .navbar-brand { font-weight: 600; }
+
+        /* --- Hero Section --- */
+        .hero-section { min-height: 100vh; display: flex; align-items: center; }
+        .hero-title { font-size: 3.2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .hero-title .name { color: var(--primary-color); }
+        .hero-subtitle { font-size: 1.5rem; color: var(--text-color); opacity: 0.8; margin-bottom: 2rem; }
+        .hero-image-container { display: flex; justify-content: center; align-items: center; }
+        .hero-image {
+            max-width: 450px; width: 100%; border-radius: 50%;
+            border: 8px solid var(--primary-color); box-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+        }
+        @media (max-width: 992px) {
+            .hero-section { text-align: center; }
+            .hero-content { order: 2; margin-top: 2rem; }
+            .hero-image-container { order: 1; }
+            .hero-title { font-size: 2.8rem; }
+        }
+
+        /* --- Buttons --- */
+        .btn-primary { background-color: var(--primary-color); border-color: var(--primary-color); transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #1D4ED8; border-color: #1D4ED8; transform: translateY(-2px); }
+        .btn-outline-light { transition: all 0.3s ease; }
+        .btn-outline-light:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: #fff; }
+
+        /* --- About & Skills Section --- */
+        #about { background-color: rgba(0,0,0,0.2); }
+        .profile-photo { border: 5px solid var(--border-color); } 
+        .skills-subtitle { color: #fff; }
+        .skill-card {
+            background: var(--card-bg); padding: 2rem; text-align: center; border-radius: 8px;
+            border: 1px solid var(--border-color); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
+        }
+        .skill-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
+        .skill-icon i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .education-item {
+            padding: 1.5rem; border-left: 3px solid var(--primary-color); margin-bottom: 1.5rem;
+            position: relative; background: rgba(30, 41, 59, 0.5);
+        }
+        .education-item::before {
+            content: ''; position: absolute; left: -9px; top: 22px; width: 15px; height: 15px;
+            border-radius: 50%; background-color: var(--primary-color); border: 2px solid var(--background-color);
+        }
+        .education-item .year { color: var(--text-color); opacity: 0.7; float: right; }
+        .education-item .institution { font-weight: 500; opacity: 0.9; }
+
+        /* --- Projects Section --- */
+        .project-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; }
+        .project-card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
+        .card-title { color: var(--primary-color); }
+        .tech-stack .badge { background-color: var(--primary-color); margin-right: 5px; font-weight: 500; }
+        .project-links { margin-top: 1rem; }
+        .card-link { color: var(--text-color); text-decoration: none; margin-right: 15px; transition: color 0.3s; }
+        .card-link:hover { color: var(--primary-color); }
+
+        /* --- Get in Touch Section --- */
+        #contact { background-color: rgba(0,0,0,0.2); }
+        .contact-tiles-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+        .contact-tile {
+            display: flex; align-items: center; justify-content: center;
+            width: 80px; height: 80px; border-radius: 12px; color: #fff;
+            text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-tile:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 15px rgba(0,0,0,0.3); }
+        .contact-tile i { font-size: 2.5rem; }
+        .contact-tile.linkedin { background: #0077b5; }
+        .contact-tile.github   { background: #333; }
+        .contact-tile.facebook { background: #1877F2; }
+        .contact-tile.whatsapp { background: #25D366; }
+        .contact-tile.email    { background: #c71610; }
+
+        /* --- Skills Modal Styling --- */
+        .modal-content { background-color: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); }
+        .modal-header { border-bottom: 1px solid var(--border-color); }
+        .modal-title { color: var(--primary-color); }
+        .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }
+        .skill-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .skill-item { display: flex; align-items: center; background: rgba(15, 23, 42, 0.7); padding: 10px 15px; border-radius: 6px; border: 1px solid var(--border-color); }
+        .skill-item i { font-size: 1.5rem; color: var(--primary-color); margin-right: 15px; width: 25px; text-align: center; }
+        .skill-item .icon-text { font-family: 'Poppins', sans-serif; font-weight: bold; font-size: 1.2rem; color: var(--primary-color); margin-right: 15px; width: 30px; text-align: center; }
+        .skill-item span { font-size: 1.1rem; }
+
+        /* --- Footer --- */
+        footer { background-color: #0c1221; border-top: 1px solid var(--border-color); }
+
+        /* --- Animations & Responsive --- */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .skill-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-icons">
+        <i class="fab fa-python"></i><i class="fab fa-html5"></i><i class="fab fa-laravel"></i><i class="fab fa-js"></i><i class="fas fa-code"></i><i class="fab fa-java"></i><i class="fab fa-git-alt"></i><i class="fas fa-database"></i><i class="fab fa-react"></i><i class="fab fa-node-js"></i>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MD MEHEDI HASAN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://youtu.be/ywjgW8GWmWk" target="_blank">
+                            <i class="fas fa-play-circle me-1"></i>Video Resume
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-5 col-md-8 hero-image-container">
+                        <img src="home.jpg.jpg" class="hero-image" alt="MD Mehedi Hasan">
+                    </div>
+                    <div class="col-lg-7 hero-content">
+                        <h1 class="hero-title">I’m <span class="name">MEHEDI</span></h1>
+                        <p class="hero-subtitle">Computer Science & Engineering Student</p>
+                        <p>Building efficient, user-centered software and web solutions.</p>
+                        <div class="mt-4">
+                            <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
+                            <a href="My Resume.pdf" class="btn btn-outline-light btn-lg" download>Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-5">
+            <div class="container fade-in">
+                <h2 class="section-title text-center">About Me</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                        <img src="about.jpg.jpg" class="img-fluid rounded-circle profile-photo" alt="MD Mehedi Hasan">
+                    </div>
+                    <div class="col-lg-8">
+                        <p>A passionate and driven Computer Science student with a strong foundation in software development principles, data structures, and algorithms. My academic journey has equipped me with proficiency in languages like Python, JavaScript, and C++, and I am always eager to learn new technologies. I thrive in collaborative environments and enjoy solving complex problems to create efficient and user-friendly applications.</p>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12"><h3 class="text-center mb-4 skills-subtitle">Technical Skills</h3></div>
+                    <div class="col-md-6 col-lg-3 mb-4"><div class="skill-card" data-bs-toggle="modal" data-bs-target="#programmingModal"><div class="skill-icon"><i class="fas fa-code"></i></div><h5>Programming</h5><p>Full-stack and versatile language proficiency.</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4"><div class="skill-card" data-bs-toggle="modal" data-bs-target="#advancedModal"><div class="skill-icon"><i class="fas fa-brain"></i></div><h5>Advanced Topics</h5><p>Core CS concepts and system-level knowledge.</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4"><div class="skill-card" data-bs-toggle="modal" data-bs-target="#toolsModal"><div class="skill-icon"><i class="fas fa-tools"></i></div><h5>Tools & Tech</h5><p>Modern development and deployment tools.</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-4"><div class="skill-card" data-bs-toggle="modal" data-bs-target="#softSkillsModal"><div class="skill-icon"><i class="fas fa-users"></i></div><h5>Soft Skills</h5><p>Collaboration, leadership, and efficiency.</p></div></div>
+                </div>
+                
+                 <div class="row mt-4">
+                    <div class="col-12"><h3 class="text-center mb-4 skills-subtitle">Education</h3></div>
+                    <div class="col-md-10 mx-auto">
+                        <div class="education-item"><h5>BSc in Computer Science & Engineering <span class="year">(2022–Present)</span></h5><p class="institution">Daffodil International University, Dhaka</p><p>Final Year (Running)</p></div>
+                        <div class="education-item"><h5>HSC (Science) <span class="year">(2021)</span></h5><p class="institution">Govt. Shah Sultan College, Bogura</p><p>GPA: 5.00 (Talent Pool Scholarship)</p></div>
+                        <div class="education-item"><h5>SSC (Science) <span class="year">(2019)</span></h5><p class="institution">Shantinagar Adarsha High School, Joypurhat</p><p>GPA: 5.00 (General Scholarship)</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-5">
+            <div class="container fade-in">
+                <h2 class="section-title text-center">Projects (9 Total)</h2>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Operating Systems Project</h5>
+                                <p class="card-text">A Process Scheduler Simulator implementing FCFS, SJF, Round Robin, and Priority Scheduling algorithms.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">C</span>
+                                    <span class="badge">OS Algorithms</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/mehedi-dev-bd/OS-Project" target="_blank" class="card-link">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="OS Project.exe" class="card-link" download>
+                                        <i class="fas fa-download"></i> Live Demo (EXE)
+                                    </a>
+                                    <a href="OS Project.c" target="_blank" class="card-link">
+                                        <i class="fas fa-file-code"></i> See Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4"><div class="project-card"><div class="card-body"><h5 class="card-title">University Assignment Web App</h5><p class="card-text">A responsive web application built for a university assignment focusing on database integration.</p><div class="tech-stack"><span class="badge">Laravel</span><span class="badge">PHP</span><span class="badge">Bootstrap</span></div><div class="project-links"><a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a><a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a></div></div></div></div>
+                    <div class="col-md-6 col-lg-4 mb-4"><div class="project-card"><div class="card-body"><h5 class="card-title">Data Structures Project</h5><p class="card-text">An efficient algorithm implementation in C++ for academic evaluation of core data structures.</p><div class="tech-stack"><span class="badge">C++</span><span class="badge">Algorithms</span></div><div class="project-links"><a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Computer Network Project</h5>
+                                <p class="card-text">Implementation of network protocols and client-server communication models using sockets.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">Python</span>
+                                    <span class="badge">Socket Programming</span>
+                                    <span class="badge">Networking</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Compiler Design Project</h5>
+                                <p class="card-text">A simple Lexical Analyzer and Parser built to understand language translation principles.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">C++</span>
+                                    <span class="badge">Lex/Yacc</span>
+                                    <span class="badge">Grammar</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="card-body">
+                                <h5 class="card-title">School Management System (Web)</h5>
+                                <p class="card-text">A full-featured web application for managing student records, faculty, and academic information.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">Laravel</span>
+                                    <span class="badge">PHP</span>
+                                    <span class="badge">MySQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="card-body">
+                                <h5 class="card-title">E-Commerce Platform (Web)</h5>
+                                <p class="card-text">A robust online store with user authentication, product catalog, cart, and checkout functionality.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">React/Next.js</span>
+                                    <span class="badge">Node.js</span>
+                                    <span class="badge">MongoDB</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Modern Developer Portfolio (Web)</h5>
+                                <p class="card-text">A sleek, responsive portfolio template built from scratch to showcase skills and projects.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">HTML5</span>
+                                    <span class="badge">CSS3</span>
+                                    <span class="badge">JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Machine Learning Model</h5>
+                                <p class="card-text">Developed a classification or regression model using popular Python machine learning libraries.</p>
+                                <div class="tech-stack">
+                                    <span class="badge">Python</span>
+                                    <span class="badge">Scikit-learn</span>
+                                    <span class="badge">Pandas</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="card-link"><i class="fab fa-github"></i> GitHub</a>
+                                    <a href="#" class="card-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="py-5">
+            <div class="container text-center fade-in">
+                 <h2 class="section-title">Resume</h2>
+                 <p class="mb-4">Here are my key qualifications and achievements. For a detailed view, please download the full PDF.</p>
+                 <a href="My Resume.pdf" class="btn btn-primary btn-lg" download><i class="fas fa-download me-2"></i>Download My Resume</a>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5">
+            <div class="container fade-in">
+                <h2 class="section-title text-center">Get in Touch</h2>
+                <p class="text-center lead mb-5">I'm always open to discussing new projects, creative ideas, or opportunities. <br>Feel free to connect with me.</p>
+                <div class="contact-tiles-grid">
+                    <a href="#" target="_blank" class="contact-tile linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mehedi-dev-bd" target="_blank" class="contact-tile github" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/mehedi.birat/" target="_blank" class="contact-tile facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/8801727393466" target="_blank" class="contact-tile whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:mehedi.birat@gmail.com" class="contact-tile email" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+    <footer class="text-center py-4">
+        <p>&copy; 2025 MD MEHEDI HASAN. All rights reserved.</p>
+    </footer>
+
+    <div class="modal fade" id="programmingModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><i class="fas fa-code me-2"></i>Programming Languages</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="skill-list">
+        <div class="skill-item"><i class="fab fa-js fa-fw"></i><span>JavaScript</span></div>
+        <div class="skill-item"><div class="icon-text">TS</div><span>TypeScript</span></div>
+        <div class="skill-item"><i class="fab fa-python fa-fw"></i><span>Python</span></div>
+        <div class="skill-item"><i class="fab fa-php fa-fw"></i><span>PHP</span></div>
+        <div class="skill-item"><i class="fab fa-java fa-fw"></i><span>Java</span></div>
+        <div class="skill-item"><div class="icon-text">C++</div><span>C++</span></div>
+        <div class="skill-item"><div class="icon-text">C</div><span>C</span></div>
+        <div class="skill-item"><i class="fab fa-laravel fa-fw"></i><span>Laravel</span></div>
+        <div class="skill-item"><i class="fab fa-node-js fa-fw"></i><span>Node.js</span></div>
+        <div class="skill-item"><i class="fas fa-file-code fa-fw"></i><span>Next.js</span></div>
+        <div class="skill-item"><i class="fab fa-bootstrap fa-fw"></i><span>Bootstrap</span></div>
+        <div class="skill-item"><i class="fab fa-html5 fa-fw"></i><span>HTML</span></div>
+        <div class="skill-item"><i class="fab fa-css3-alt fa-fw"></i><span>CSS</span></div>
+    </div></div></div></div></div>
+    <div class="modal fade" id="advancedModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><i class="fas fa-brain me-2"></i>Advanced Topics</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="skill-list">
+        <div class="skill-item"><i class="fas fa-robot fa-fw"></i><span>Artificial Intelligence</span></div>
+        <div class="skill-item"><i class="fas fa-desktop fa-fw"></i><span>Operating System</span></div>
+        <div class="skill-item"><i class="fab fa-ubuntu fa-fw"></i><span>Ubuntu</span></div>
+        <div class="skill-item"><i class="fas fa-cogs fa-fw"></i><span>Compiler Design</span></div>
+        <div class="skill-item"><i class="fas fa-sitemap fa-fw"></i><span>System Analysis & Design</span></div>
+        <div class="skill-item"><i class="fas fa-project-diagram fa-fw"></i><span>Software Engineering</span></div>
+        <div class="skill-item"><i class="fas fa-microchip fa-fw"></i><span>Computer Architecture</span></div>
+        <div class="skill-item"><i class="fas fa-memory fa-fw"></i><span>Microprocessor</span></div>
+    </div></div></div></div></div>
+    <div class="modal fade" id="toolsModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><i class="fas fa-tools me-2"></i>Tools & Technologies</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="skill-list">
+        <div class="skill-item"><i class="fab fa-git-alt fa-fw"></i><span>Git & GitHub</span></div>
+        <div class="skill-item"><i class="fas fa-terminal fa-fw"></i><span>VS Code</span></div>
+        <div class="skill-item"><i class="fas fa-database fa-fw"></i><span>MySQL</span></div>
+        <div class="skill-item"><i class="fab fa-docker fa-fw"></i><span>Docker</span></div>
+        <div class="skill-item"><i class="fas fa-paper-plane fa-fw"></i><span>Postman</span></div>
+        <div class="skill-item"><i class="fab fa-figma fa-fw"></i><span>Figma</span></div>
+        <div class="skill-item"><i class="fas fa-network-wired fa-fw"></i><span>Cisco Packet Tracer</span></div>
+    </div></div></div></div></div>
+    <div class="modal fade" id="softSkillsModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title"><i class="fas fa-users me-2"></i>Soft Skills</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="skill-list">
+        <div class="skill-item"><i class="fas fa-lightbulb fa-fw"></i><span>Problem-Solving</span></div>
+        <div class="skill-item"><i class="fas fa-people-group fa-fw"></i><span>Teamwork & Collaboration</span></div>
+        <div class="skill-item"><i class="fas fa-comments fa-fw"></i><span>Communication</span></div>
+        <div class="skill-item"><i class="fas fa-tasks fa-fw"></i><span>Project Management</span></div>
+        <div class="skill-item"><i class="fas fa-user-tie fa-fw"></i><span>Leadership</span></div>
+        <div class="skill-item"><i class="fas fa-brain fa-fw"></i><span>Critical Thinking</span></div>
+    </div></div></div></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Simple fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+</body>
+</html>
