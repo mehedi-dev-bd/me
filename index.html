@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD MEHEDI HASAN | Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="background-icons">
+        <i class="fab fa-python"></i><i class="fab fa-html5"></i><i class="fab fa-laravel"></i><i class="fab fa-js"></i><i class="fas fa-code"></i><i class="fab fa-java"></i><i class="fab fa-git-alt"></i><i class="fas fa-database"></i><i class="fab fa-react"></i><i class="fab fa-node-js"></i>
+    </div>
+
+    <!-- Navbar with 3D Liquid Buttons -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://mehedi-dev-bd.github.io/confidential/" onclick="showContent('main')">MD MEHEDI HASAN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center nav-gap mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="liquid-btn nav-liquid-btn btn-cyan" href="#" onclick="showContent('main')"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="liquid-btn nav-liquid-btn btn-purple" href="#" onclick="showContent('student')"><i class="fas fa-user-graduate"></i> Student Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="liquid-btn nav-liquid-btn btn-yellow" href="#" onclick="showContent('developer')"><i class="fas fa-laptop-code"></i> Developer Career</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="liquid-btn nav-liquid-btn btn-report" href="https://youtu.be/ywjgW8GWmWk" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> Video Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="liquid-btn nav-liquid-btn btn-demo" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                    <!-- Resume Button -->
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="My Resume.pdf" target="_blank" rel="noopener noreferrer" class="liquid-btn nav-liquid-btn btn-slide">
+                            <i class="fas fa-file-pdf"></i> Resume
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content container-fluid p-0">
+        
+        <!-- ================= MAIN SPLIT FACE SECTION ================= -->
+        <section id="split-face-section" class="split-container fade-in visible">
+            <!-- Left Side (Student) -->
+            <div class="half-screen left-half" onclick="showContent('student')" role="button" tabindex="0">
+                <img src="./left-face.png" alt="Student Life" class="face-img left-img">
+                
+                <!-- Vertical Floating Title -->
+                <div class="vertical-title left-title">Student</div>
+                
+                <div class="overlay-text">
+                    <h3>Student Life</h3>
+                    <p>Click to see my academic journey</p>
+                </div>
+            </div>
+
+            <!-- Right Side (Developer) -->
+            <div class="half-screen right-half" onclick="showContent('developer')" role="button" tabindex="0">
+                <img src="./right-face.png" alt="Developer Career" class="face-img right-img">
+                
+                <!-- Vertical Floating Title -->
+                <div class="vertical-title right-title">Developer</div>
+                
+                <div class="overlay-text">
+                    <h3>Developer Career</h3>
+                    <p>Click to explore my projects & skills</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= STUDENT LIFE CONTENT ================= -->
+        <section id="student-content" class="content-section d-none py-4 container">
+            <button class="liquid-btn btn-github mb-5" onclick="showContent('main')">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+            
+            <div class="row align-items-center justify-content-center mb-5 fade-in">
+                <div class="col-lg-5 col-md-8 hero-image-container">
+                    <img src="./home.jpg" class="hero-image" alt="Mehedi - Student">
+                </div>
+                <div class="col-lg-7 hero-content">
+                    <h1 class="hero-title">I’m <span class="name">MEHEDI</span></h1>
+                    <p class="hero-subtitle">Computer Science & Engineering Student</p>
+                    <p>Dedicated to learning data structures, algorithms, and fundamental computer science concepts to build a strong foundation.</p>
+                    <div class="mt-4">
+                        <a href="#student-education" class="liquid-btn btn-purple btn-lg">
+                            <i class="fas fa-graduation-cap"></i> View Academics
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-5 mb-5 fade-in">
+                <h2 class="section-title text-start mb-5">About Me</h2>
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <img src="./about.jpg" class="img-fluid rounded-circle profile-photo" alt="Mehedi - About">
+                </div>
+                <div class="col-lg-8">
+                    <p>A passionate and driven Computer Science student with a strong foundation in software development principles, data structures, and algorithms. My academic journey has equipped me with proficiency in modern concepts, and I am always eager to learn new technologies. I thrive in academic environments and enjoy solving complex algorithmic problems.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5 pt-5 fade-in" id="student-education">
+                <div class="col-12"><h3 class="text-center mb-4 skills-subtitle">Education</h3></div>
+                <div class="col-md-10 mx-auto">
+                    <div class="education-item"><h5>BSc in Computer Science & Engineering <span class="year">(2022–Present)</span></h5><p class="institution">Daffodil International University, Dhaka</p><p>Final Year (Running)</p></div>
+                    <div class="education-item"><h5>HSC (Science) <span class="year">(2021)</span></h5><p class="institution">Govt. Shah Sultan College, Bogura</p><p>GPA: 5.00 (Talent Pool Scholarship)</p></div>
+                    <div class="education-item"><h5>SSC (Science) <span class="year">(2019)</span></h5><p class="institution">Shantinagar Adarsha High School, Joypurhat</p><p>GPA: 5.00 (General Scholarship)</p></div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-5 fade-in" id="student-projects">
+                <div class="col-12"><h3 class="text-center mb-5 skills-subtitle">Academic Projects</h3></div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <img src="./OS/os.jpg" alt="OS Project" class="project-img">
+                        <div class="p-4">
+                            <h5 class="card-title">Operating Systems</h5>
+                            <p class="card-text text-sm mb-4">Process Scheduler Simulator implementing FCFS, SJF, Round Robin, and Priority Scheduling algorithms.</p>
+                            <div class="liquid-btn-group">
+                                <a href="https://github.com/mehedi-dev-bd/OS-Project" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github" title="GitHub"><i class="fab fa-github"></i> Code</a>
+                                <a href="./OS/os.exe" class="liquid-btn btn-demo" title="Live Demo"><i class="fas fa-play"></i> Demo</a>
+                                <a href="./OS/os.pdf" target="_blank" class="liquid-btn btn-report" title="Report"><i class="fas fa-file-pdf"></i> Report</a>
+                                <a href="./OS/os.pptx" class="liquid-btn btn-slide" title="Presentation"><i class="fas fa-file-powerpoint"></i> Slide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <img src="./cn/cn.jpg" alt="Computer Network" class="project-img">
+                        <div class="p-4">
+                            <h5 class="card-title">Computer Network</h5>
+                            <p class="card-text text-sm mb-4">Network architecture and protocol simulation using Cisco Packet Tracer for enterprise setup.</p>
+                            <div class="liquid-btn-group">
+                                <a href="https://github.com/mehedi-dev-bd/Computer-Network-Projects" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github" title="GitHub"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://github.com/mehedi-dev-bd/Computer-Network-Projects/blob/main/NetflowArchitects%20Project.pkt" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-demo" title="Live Demo"><i class="fas fa-network-wired"></i> .pkt</a>
+                                <a href="./cn/cn.pptx" class="liquid-btn btn-report" title="Report"><i class="fas fa-file-pdf"></i> Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <img src="./cd/cd.jpg" alt="Compiler Design" class="project-img">
+                        <div class="p-4">
+                            <h5 class="card-title">Compiler Design Lab</h5>
+                            <p class="card-text text-sm mb-4">ToyLang - A modified programming language designed specifically to help Bengali language coders understand logic easily.</p>
+                            <div class="liquid-btn-group">
+                                <a href="https://github.com/mehedi-dev-bd/ToyLang-A-Customized-Programming-Language" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github" title="GitHub"><i class="fab fa-github"></i> Code</a>
+                                <a href="./cd/cd.pptx" class="liquid-btn btn-slide" title="Presentation"><i class="fas fa-file-powerpoint"></i> Slide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Graphics Lab -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <img src="./cgl/cgl.jpeg" alt="Computer Graphics Lab" class="project-img">
+                        <div class="p-4">
+                            <h5 class="card-title">Computer Graphics Lab</h5>
+                            <p class="card-text text-sm mb-4">Using OpenGL Project, an Animation Based Weather Changing Project.</p>
+                            <div class="liquid-btn-group">
+                                <a href="https://github.com/mehedi-dev-bd/Computer-Graphics-Lab" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github" title="GitHub"><i class="fab fa-github"></i> Code</a>
+                                 <a href="./cgl/cgl.pdf" target="_blank" class="liquid-btn btn-report" title="Report"><i class="fas fa-file-pdf"></i> Report</a>
+                                <a href="./cgl/cgl.pptx" class="liquid-btn btn-slide" title="Presentation"><i class="fas fa-file-powerpoint"></i> Slide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NLP -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <img src="./nlp/nlp.jpg" alt="Breaking-Bad, NLP" class="project-img">
+                        <div class="p-4">
+                            <h5 class="card-title">Breaking Bad</h5>
+                            <p class="card-text text-sm mb-4">NLP Based Project for Tracing Bad Prompts for AI.</p>
+                            <div class="liquid-btn-group">
+                                <a href="https://github.com/mehedi-dev-bd/breaking-bad" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github" title="GitHub"><i class="fab fa-github"></i> Code</a>
+                                <a href="./nlp/nlp.pptx" class="liquid-btn btn-report" title="Report"><i class="fas fa-file-pdf"></i> Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI & UX Design (Nexus) -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <img src="./ui/ui.png" alt="Nexus" class="project-img">
+                        <div class="p-4">
+                            <h5 class="card-title">Nexus - UI & UX Focused</h5>
+                            <p class="card-text text-sm mb-4">Nexus: Autonomous Research Agent Choreographer.</p>
+                            <div class="liquid-btn-group">
+                                <a href="https://github.com/mehedi-dev-bd/nexus" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github" title="GitHub"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://mehedi-dev-bd.github.io/nexus/" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-demo" title="Live Demo"><i class="fas fa-play"></i> Live</a>
+                                <a href="./ui/ui.pdf" target="_blank" class="liquid-btn btn-report" title="Report"><i class="fas fa-file-pdf"></i> Report</a>
+                                <a href="./ui/ui.pptx" class="liquid-btn btn-slide" title="Presentation"><i class="fas fa-file-powerpoint"></i> Slide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software Engineering -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <img src="./swe/swe.png" alt="Bridge Link" class="project-img">
+                        <div class="p-4">
+                            <h5 class="card-title">Bridgelink</h5>
+                            <p class="card-text text-sm mb-4">Unified Thesis Management Ecosystem. Software Engineering Course Project.</p>
+                            <div class="liquid-btn-group">
+                                <a href="https://github.com/mehedi-dev-bd/bridgelink/settings/pages" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github" title="GitHub"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://mehedi-dev-bd.github.io/bridgelink/" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-demo" title="Live Demo"><i class="fas fa-play"></i> Live</a>
+                                <a href="swe.pdf" target="_blank" class="liquid-btn btn-report" title="Report"><i class="fas fa-file-pdf"></i> Report</a>
+                                <a href="swe.pptx" class="liquid-btn btn-slide" title="Presentation"><i class="fas fa-file-powerpoint"></i> Slide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DEVELOPER CAREER CONTENT ================= -->
+        <section id="developer-content" class="content-section d-none py-4 container">
+            <button class="liquid-btn btn-github mb-5" onclick="showContent('main')">
+                <i class="fas fa-arrow-left"></i> Back to Face View
+            </button>
+
+            <div class="row align-items-center justify-content-center mb-5 fade-in">
+                <div class="col-lg-5 col-md-8 hero-image-container">
+                    <img src="./home.jpg" class="hero-image" alt="Mehedi - Developer">
+                </div>
+                <div class="col-lg-7 hero-content">
+                    <h1 class="hero-title">I’m <span class="name">MEHEDI</span></h1>
+                    <p class="hero-subtitle">Software & Web Developer</p>
+                    <p>Building efficient, user-centered software and web solutions using modern tech stacks like Laravel, React, and Node.js.</p>
+                    <div class="mt-4">
+                        <a href="#developer-projects" class="liquid-btn btn-yellow btn-lg">
+                            <i class="fas fa-laptop-code"></i> View My Work
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-5 mb-5 fade-in">
+                <h2 class="section-title text-start mb-5">About Me</h2>
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <img src="about.jpg.jpg" class="img-fluid rounded-circle profile-photo" alt="Mehedi - Developer About">
+                </div>
+                <div class="col-lg-8">
+                    <p>As a developer, I specialize in full-stack web development and software engineering. I have hands-on experience building scalable web applications, managing databases, and integrating APIs. I thrive in collaborative, fast-paced environments and love turning complex business requirements into efficient, maintainable, and user-friendly digital products.</p>
+                </div>
+            </div>
+
+            <!-- Developer Skills (Floating 3D Feature & Modals) -->
+            <div class="row mt-5 pt-5 fade-in">
+                <div class="col-12"><h3 class="text-center mb-4 skills-subtitle">Technical Skills</h3></div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 float-1">
+                    <div class="skill-card" data-bs-toggle="modal" data-bs-target="#programmingModal" role="button" tabindex="0">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h5 class="card-title">Programming</h5>
+                        <p class="card-text">JavaScript, Python, PHP, C++, Laravel</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 float-2">
+                    <div class="skill-card" data-bs-toggle="modal" data-bs-target="#toolsModal" role="button" tabindex="0">
+                        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                        <h5 class="card-title">Tools & Tech</h5>
+                        <p class="card-text">Git, MySQL, Docker, Postman, Figma</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 float-3">
+                    <div class="skill-card" data-bs-toggle="modal" data-bs-target="#advancedModal" role="button" tabindex="0">
+                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                        <h5 class="card-title">Advanced Topics</h5>
+                        <p class="card-text">OS, Compiler Design, System Architecture</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4 float-4">
+                    <div class="skill-card" data-bs-toggle="modal" data-bs-target="#softSkillsModal" role="button" tabindex="0">
+                        <div class="skill-icon"><i class="fas fa-users"></i></div>
+                        <h5 class="card-title">Soft Skills</h5>
+                        <p class="card-text">Problem-Solving, Leadership, Teamwork</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3 fade-in" id="developer-projects">
+                <div class="col-12"><h3 class="text-center mb-4 skills-subtitle">Deployed Projects</h3></div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <div class="card-body">
+                            <img src="./school/school.png" alt="School" class="project-img">
+                            <h5 class="card-title mt-3">School Website</h5>
+                            <p class="card-text">A fully responsive School Website built with Laravel, PHP, and Bootstrap.</p>
+                            <div class="liquid-btn-group mt-4">
+                                <a href="https://github.com/mehedi-dev-bd/School" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://mehedi-dev-bd.github.io/School/" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-demo"><i class="fas fa-external-link-alt"></i> Live</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <div class="card-body">
+                            <img src="./meal/meal.png" alt="Daffodil Meal Service" class="project-img">
+                            <h5 class="card-title mt-3">DIU Meal Service</h5>
+                            <p class="card-text">A web application for managing and ordering meals for university students.</p>
+                            <div class="liquid-btn-group mt-4">
+                                <a href="https://github.com/mehedi-dev-bd/DIU-Meal-Service" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://mehedi-dev-bd.github.io/DIU-Meal-Service/" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-slide"><i class="fas fa-external-link-alt"></i> Live</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <div class="card-body">
+                            <img src="./it/it.png" alt="It-Firm" class="project-img">
+                            <h5 class="card-title mt-3">IT Firm Portfolio</h5>
+                            <p class="card-text">A professional website developed for ARMS InfoTech BD.</p>
+                            <div class="liquid-btn-group mt-4">
+                                <a href="https://github.com/mehedi-dev-bd/ARMS-InfoTech-BD" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://mehedi-dev-bd.github.io/ARMS-InfoTech-BD/" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-slide"><i class="fas fa-external-link-alt"></i> Live</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="academic-project-card">
+                        <div class="card-body">
+                            <img src="./cat/cat.png" alt="Cat" class="project-img">
+                            <h5 class="card-title mt-3">Cat-Family</h5>
+                            <p class="card-text">My beloved cats in a unified gallery view.</p>
+                            <div class="liquid-btn-group mt-4">
+                                <a href="https://github.com/mehedi-dev-bd/cat/settings/pages" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-github"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://mehedi-dev-bd.github.io/cat/" target="_blank" rel="noopener noreferrer" class="liquid-btn btn-slide"><i class="fas fa-external-link-alt"></i> Live</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= GET IN TOUCH ================= -->
+        <section id="contact" class="py-5 mt-5">
+            <div class="container fade-in">
+                <h2 class="section-title text-start w-100">Get in Touch</h2>
+                
+                <div class="contact-text-container mt-4 mb-5 text-center">
+                    <p class="lead mb-1">I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+                    <p class="lead">Feel free to connect with me.</p>
+                </div>
+                
+                <div class="contact-tiles-grid">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="contact-tile linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mehedi-dev-bd" target="_blank" rel="noopener noreferrer" class="contact-tile github" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/mehedi.birat/" target="_blank" rel="noopener noreferrer" class="contact-tile facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/8801727393466" target="_blank" rel="noopener noreferrer" class="contact-tile whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/@mehedi.birat2004" target="_blank" rel="noopener noreferrer" class="contact-tile youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="mailto:mehedi.birat@gmail.com" class="contact-tile email" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+    <!-- ================= FOOTER ================= -->
+    <footer class="text-center py-4 mt-5">
+        <p class="text-light m-0" style="opacity: 0.9;">&copy; 2026 MD MEHEDI HASAN. All rights reserved.</p>
+    </footer>
+
+    <!-- ================= MODALS ================= -->
+    <!-- Programming Modal -->
+    <div class="modal fade custom-dark-modal" id="programmingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-code"></i> Programming</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-grid">
+                        <div class="modal-grid-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-python"></i><span>Python</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-java"></i><span>Java</span></div>
+                        <div class="modal-grid-item"><div class="icon-text">C++</div><span>C++</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-laravel"></i><span>Laravel</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Modal -->
+    <div class="modal fade custom-dark-modal" id="advancedModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-brain"></i> Advanced Topics</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-grid">
+                        <div class="modal-grid-item"><i class="fas fa-robot"></i><span>Artificial Intelligence</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-desktop"></i><span>Operating System</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-ubuntu"></i><span>Ubuntu</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-cogs"></i><span>Compiler Design</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-sitemap"></i><span>System Analysis & Design</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-project-diagram"></i><span>Software Engineering</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-microchip"></i><span>Computer Architecture</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-memory"></i><span>Microprocessor</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tools Modal -->
+    <div class="modal fade custom-dark-modal" id="toolsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-tools"></i> Tools & Tech</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-grid">
+                        <div class="modal-grid-item"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-terminal"></i><span>VS Code</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-database"></i><span>MySQL</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+                        <div class="modal-grid-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soft Skills Modal -->
+    <div class="modal fade custom-dark-modal" id="softSkillsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-users"></i> Soft Skills</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-grid">
+                        <div class="modal-grid-item"><i class="fas fa-lightbulb"></i><span>Problem-Solving</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-people-group"></i><span>Teamwork</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-comments"></i><span>Communication</span></div>
+                        <div class="modal-grid-item"><i class="fas fa-user-tie"></i><span>Leadership</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
